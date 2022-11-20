@@ -9,7 +9,6 @@
                     <div class="col-lg-9 order-lg-last col-md-12 order-md-first">
                         <!-- Shop Top Area Start -->
                         <div class="shop-top-bar d-flex">
-                            <p class="compare-product"> <span>12</span> Product Found of <span>30</span></p>
                             <!-- Left Side End -->
                             <div class="shop-tab nav">
                                 <button class="active" data-bs-target="#shop-grid" data-bs-toggle="tab">
@@ -58,8 +57,8 @@
                                                         </span>
                                                         <div class="thumb">
                                                             <a href="{{ obj.get_absolute_url }}" class="image">
-                                                                <img src="{% static 'Main/images/product-image/1.webp' %}" alt="Product" />
-                                                                <img class="hover-image" src="{% static 'Main/images/product-image/1.webp' %}" alt="Product" />
+                                                                <img src="{{ obj.photo.url }}" alt="Product" width="270" height="274" />
+                                                                <img class="hover-image" src="{{ obj.photo.url }}" alt="Product" width="270" height="274"/>
                                                             </a>
                                                         </div>
                                                         <div class="content">
@@ -68,7 +67,7 @@
                                                                 </a>
                                                             </h5>
                                                             <span class="price">
-                                                            <span class="new">${{ obj.price }}</span>
+                                                            <span class="new">${{ obj.old_price }}</span>
                                                             </span>
                                                         </div>
                                                         <div class="actions">
@@ -89,15 +88,18 @@
 
                                             </div>
                                         </div>
+
                                         <div class="tab-pane fade mb-n-30px" id="shop-list">
+                                            {% for obj in products %}
                                             <div class="shop-list-wrapper mb-30px">
                                                 <div class="row">
+
                                                     <div class="col-md-5 col-lg-5 col-xl-4 mb-lm-30px">
                                                         <div class="product">
                                                             <div class="thumb">
                                                                 <a href="single-product.html" class="image">
-                                                                    <img src="{% static 'Main/images/product-image/1.webp' %}" alt="Product" />
-                                                                    <img class="hover-image" src="assets/images/product-image/1.webp" alt="Product" />
+                                                                    <img src="{{ obj.photo.url }}"  width="270" height="274" alt="Product" />
+                                                                    <img class="hover-image" src="{{ obj.photo.url }}" alt="Product" width="270" height="274" />
                                                                 </a>
                                                                 <span class="badges">
                                                                 <span class="new">New</span>
@@ -105,19 +107,17 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="col-md-7 col-lg-7 col-xl-8">
                                                         <div class="content-desc-wrap">
                                                             <div class="content">
-                                                                <span class="category"><a href="#">Accessories</a></span>
-                                                                <h5 class="title"><a href="single-product.html">Modern Smart Phone</a></h5>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                                    sed do eiusmodol tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veni quis nostrud
-                                                                    exercitation ullamco laboris </p>
+                                                                <span class="category"><a href="#">{{ obj.category }}</a></span>
+                                                                <h5 class="title"><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a></h5>
+                                                                <p>{{ obj.description|truncatechars:250 }}</p>
                                                             </div>
                                                             <div class="box-inner">
                                                                 <span class="price">
-                                                                <span class="new">$38.50</span>
+                                                                <span class="new">${{ obj.old_price }}</span>
                                                                 </span>
                                                                 <div class="actions">
                                                                     <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
@@ -133,10 +133,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
-
+                                                {% endfor %}
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +176,7 @@
                             </div>
                             <!-- Sidebar single item -->
                             <div class="sidebar-widget mt-8">
-                                <h4 class="sidebar-title">Price Filter</h4>
+                                <h4 class="sidebar-title">Цена:</h4>
                                 <div class="price-filter">
                                     <div class="price-slider-amount">
                                         <input type="text" id="amount" class="p-0 h-auto lh-1" name="price" placeholder="Add Your Price" />

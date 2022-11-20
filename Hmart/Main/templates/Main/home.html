@@ -11,7 +11,7 @@
                     <div class="col-12">
                         <div class="section-title text-center">
                             <h2 class="title pt-70px">Новые товары</h2>
-                            <p>Больше товаров доступно в нашем каталоге</p>
+                            <p>Больше товаров доступно в нашем <a href="{% url 'all_products' %}">каталоге</a></p>
                         </div>
                     </div>
                 </div>
@@ -28,8 +28,8 @@
                                     </span>
                                     <div class="thumb">
                                         <a href="{{ obj.get_absolute_url }}" class="image">
-                                            <img src="{% static 'Main/images/product-image/1.webp' %}" alt="Product" />
-                                            <img class="hover-image" src="{% static 'Main/images/product-image/1.webp' %}" alt="Product" />
+                                            <img src="{{ obj.photo.url }}" alt="Product" width="270" height="274"/>
+                                            <img class="hover-image" src="{{ obj.photo.url }}" alt="Product" width="270" height="274" />
                                         </a>
                                     </div>
                                     <div class="content">
@@ -38,7 +38,7 @@
                                             </a>
                                         </h5>
                                         <span class="price">
-                                            <span class="new">${{ obj.price }}</span>
+                                            <span class="new">${{ obj.old_price }}</span>
                                         </span>
                                     </div>
                                     <div class="actions">
@@ -63,28 +63,18 @@
         <div class="banner-area style-three pb-100px">
             <div class="container">
                 <div class="row">
+                    {% for obj in two_product %}
                     <div class="col-md-6">
                         <div class="single-banner mb-lm-30px">
-                            <img src="{% static 'Main/images/banner/8.webp' %}" alt="">
+                            <img src="{{ obj.photo.url }}" alt="Product" width="572" height="542" />
                             <div class="banner-content nth-child-3">
-                                <h3 class="title">Smart Watch For <br>
-                                        Your Hand</h3>
-                                <span class="category">From $69.00</span>
-                                <a href="shop-left-sidebar.html" class="shop-link">Shop Now <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                <h3 class="title">{{ obj.title }} <br></h3>
+                                <span class="category">Цена: ${{ obj.old_price }}</span>
+                                <a href="shop-left-sidebar.html" class="shop-link">Посмотреть <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="single-banner">
-                            <img src="{% static 'Main/images/banner/9.webp' %}" alt="">
-                            <div class="banner-content nth-child-2">
-                                <h3 class="title">Smart Watch For <br>
-                                        Your Hand</h3>
-                                <span class="category">From $95.00</span>
-                                <a href="shop-left-sidebar.html" class="shop-link">Shop Now <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -93,12 +83,12 @@
 
         <!-- Feature product area End -->
         <!-- Fashion Area Start -->
-        <div class="fashion-area" data-bg-image="{% static 'Main/images/fashion/fashion-bg.webp' %}">
+        <div class="fashion-area" data-bg-image="{% static 'Main/images/home.jpg' %}" >
             <div class="container h-100">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-12 text-center">
-                        <h2 class="title"> <span>Smart Fashion</span> With Smart Devices </h2>
-                        <a href="shop-left-sidebar.html" class="btn btn-primary text-capitalize m-auto">Shop All Devices</a>
+                        <h2 class="title"> <span>Умная мода</span> С умными девайсами </h2>
+                        <a href="{% url 'all_products' %}" class="btn btn-primary text-capitalize m-auto">все товары</a>
                     </div>
                 </div>
             </div>
