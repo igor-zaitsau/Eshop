@@ -7,5 +7,5 @@ urlpatterns = [
     path('products/', all_products, name='all_products'),
     path('contact/', contact, name='contact'),
     path('about/', about, name='about'),
-    path('product/', single_product, name='single_product')
+    path('product/<int:product_id>', single_product, name='single_product')
 ]

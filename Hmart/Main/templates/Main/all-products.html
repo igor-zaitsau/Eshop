@@ -49,6 +49,7 @@
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="shop-grid">
                                             <div class="row mb-n-30px">
+                                                {% for obj in products %}
                                                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-30px">
                                                     <!-- Single Prodect -->
                                                     <div class="product">
@@ -56,18 +57,18 @@
                                                         <span class="new">New</span>
                                                         </span>
                                                         <div class="thumb">
-                                                            <a href="single-product.html" class="image">
+                                                            <a href="{{ obj.get_absolute_url }}" class="image">
                                                                 <img src="{% static 'Main/images/product-image/1.webp' %}" alt="Product" />
                                                                 <img class="hover-image" src="{% static 'Main/images/product-image/1.webp' %}" alt="Product" />
                                                             </a>
                                                         </div>
                                                         <div class="content">
-                                                            <span class="category"><a href="#">Accessories</a></span>
-                                                            <h5 class="title"><a href="single-product.html">Modern Smart Phone
+                                                            <span class="category"><a href="#">{{ obj.category }}</a></span>
+                                                            <h5 class="title"><a href="single-product.html">{{ obj.title }}
                                                                 </a>
                                                             </h5>
                                                             <span class="price">
-                                                            <span class="new">$38.50</span>
+                                                            <span class="new">${{ obj.price }}</span>
                                                             </span>
                                                         </div>
                                                         <div class="actions">
@@ -81,104 +82,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-30px">
-                                                    <!-- Single Prodect -->
-                                                    <div class="product">
-                                                        <span class="badges">
-                                                        <span class="sale">-10%</span>
-                                                        <span class="new">New</span>
-                                                        </span>
-                                                        <div class="thumb">
-                                                            <a href="single-product.html" class="image">
-                                                                <img src="{% static 'Main/images/product-image/2.webp' %}" alt="Product" />
-                                                                <img class="hover-image" src="{% static 'Main/images/product-image/2.webp' %}" alt="Product" />
-                                                            </a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <span class="category"><a href="#">Accessories</a></span>
-                                                            <h5 class="title"><a href="single-product.html">Bluetooth Headphone
-                                                                </a>
-                                                            </h5>
-                                                            <span class="price">
-                                                            <span class="old">$48.50</span>
-                                                            <span class="new">$38.50</span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="actions">
-                                                            <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
-                                                                class="pe-7s-shopbag"></i></button>
-                                                            <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist"><i
-                                                                    class="pe-7s-like"></i></button>
-                                                            <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="pe-7s-look"></i></button>
-                                                            <button class="action compare" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal-Compare"><i
-                                                                    class="pe-7s-refresh-2"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-30px">
-                                                    <!-- Single Prodect -->
-                                                    <div class="product">
-                                                        <span class="badges">
-                                                        <span class="new">Sale</span>
-                                                        </span>
-                                                        <div class="thumb">
-                                                            <a href="single-product.html" class="image">
-                                                                <img src="{% static 'Main/images/product-image/3.webp' %}" alt="Product" />
-                                                                <img class="hover-image" src="{% static 'Main/images/product-image/3.webp' %}" alt="Product" />
-                                                            </a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <span class="category"><a href="#">Accessories</a></span>
-                                                            <h5 class="title"><a href="single-product.html">Smart Music Box
-                                                                </a>
-                                                            </h5>
-                                                            <span class="price">
-                                                            <span class="new">$38.50</span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="actions">
-                                                            <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
-                                                                class="pe-7s-shopbag"></i></button>
-                                                            <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist"><i
-                                                                    class="pe-7s-like"></i></button>
-                                                            <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="pe-7s-look"></i></button>
-                                                            <button class="action compare" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal-Compare"><i
-                                                                    class="pe-7s-refresh-2"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-30px">
-                                                    <!-- Single Prodect -->
-                                                    <div class="product">
-                                                        <span class="badges">
-                                                        <span class="new">New</span>
-                                                        </span>
-                                                        <div class="thumb">
-                                                            <a href="single-product.html" class="image">
-                                                                <img src="{% static 'Main/images/product-image/4.webp' %}" alt="Product" />
-                                                                <img class="hover-image" src="{% static 'Main/images/product-image/1.webp' %}" alt="Product" />
-                                                            </a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <span class="category"><a href="#">Accessories</a></span>
-                                                            <h5 class="title"><a href="single-product.html">Air Pods 25Hjkl Black
-                                                                </a>
-                                                            </h5>
-                                                            <span class="price">
-                                                            <span class="new">$38.50</span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="actions">
-                                                            <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
-                                                                class="pe-7s-shopbag"></i></button>
-                                                            <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist"><i
-                                                                    class="pe-7s-like"></i></button>
-                                                            <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="pe-7s-look"></i></button>
-                                                            <button class="action compare" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal-Compare"><i
-                                                                    class="pe-7s-refresh-2"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                {% endfor %}
+
 
 
 
@@ -260,23 +165,15 @@
                         <div class="shop-sidebar-wrap">
                             <!-- Sidebar single item -->
                             <div class="sidebar-widget">
-                                <h4 class="sidebar-title">Top Categories</h4>
+                                <h4 class="sidebar-title">Категории:</h4>
                                 <div class="sidebar-widget-category">
                                     <ul>
                                         <li><a href="#" class="selected m-0"> All
                                                 <span>(65)</span> </a></li>
-                                        <li><a href="#" class=""> Computer
-                                                <span>(12)</span> </a></li>
-                                        <li><a href="#" class=""> Covid-19
-                                                <span>(22)</span> </a></li>
-                                        <li><a href="#" class=""> Electronics
-                                                <span>(19)</span> </a></li>
-                                        <li><a href="#" class=""> Frame Sunglasses
-                                                <span>(17)</span> </a></li>
-                                        <li><a href="#" class=""> Furniture
-                                                <span>(7)</span> </a></li>
-                                        <li><a href="#" class=""> Genuine Leather
-                                                <span>(9)</span> </a></li>
+                                        {% for obj in category %}
+                                        <li><a href="#" class="selected m-0"> {{ obj.title }}
+                                                <span>(65)</span> </a></li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
@@ -293,33 +190,15 @@
                             <!-- Sidebar single item -->
 
                             <!-- Sidebar single item -->
-                            <div class="sidebar-widget">
-                                <h4 class="sidebar-title">Size</h4>
-                                <div class="sidebar-widget-size">
-                                    <ul>
-                                        <li><a href="#" class="selected m-0"> All
-                                                <span>(6)</span> </a></li>
-                                        <li><a href="#" class=""> S <span>(12)</span> </a>
-                                        </li>
-                                        <li><a href="#" class=""> M <span>(21)</span> </a>
-                                        </li>
-                                        <li><a href="#" class=""> L <span>(16)</span> </a>
-                                        </li>
-                                        <li><a href="#" class=""> XL <span>(22)</span> </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+
                             <!-- Sidebar single item -->
                             <div class="sidebar-widget">
                                 <h4 class="sidebar-title">Brands</h4>
                                 <div class="sidebar-widget-brand">
                                     <ul>
-                                        <li><a href="#" class="selected m-0"> Lakmeeto<span>(65)</span> </a></li>
-                                        <li><a href="#" class=""> Beautifill <span>(14)</span></a></li>
-                                        <li><a href="#" class=""> Made In GD <span>(21)</span></a></li>
-                                        <li><a href="#" class=""> Pecifico <span>(16)</span></a></li>
-                                        <li><a href="#" class=""> Xlovgtir<span>(12)</span></a></li>
+                                        {% for obj in brand %}
+                                        <li><a href="#" class="selected m-0"> {{ obj.title }}<span>(65)</span> </a></li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
