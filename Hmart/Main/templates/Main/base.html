@@ -6,7 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hmart - Two</title>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Hmart</title>
+    {% endif %}
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Hmart-Smart Product eCommerce html Template">
     <!-- Favicon -->
@@ -134,54 +138,7 @@
                         <div class="main-menu position-relative">
                             <ul>
                                 <li><a href="{% url 'home' %}">Главная</a></li>
-
-                                <li class="dropdown position-static"><a href="#">Все товары <i
-                                    class="fa fa-angle-down"></i></a>
-                                    <ul class="mega-menu d-block">
-                                        <li class="d-flex">
-                                            <ul class="d-block">
-                                                <li class="title"><a href="#">Shop Page</a></li>
-                                                <li><a href="shop-3-column.html">Shop 3 Column</a></li>
-                                                <li><a href="shop-4-column.html">Shop 4 Column</a></li>
-                                                <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a>
-                                                </li>
-                                                <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a>
-                                                </li>
-                                            </ul>
-                                            <ul class="d-block">
-                                                <li class="title"><a href="#">product Details Page</a></li>
-                                                <li><a href="single-product.html">Product Single</a></li>
-                                                <li><a href="single-product-variable.html">Product Variable</a></li>
-                                                <li><a href="single-product-affiliate.html">Product Affiliate</a></li>
-                                                <li><a href="single-product-group.html">Product Group</a></li>
-                                                <li><a href="single-product-tabstyle-2.html">Product Tab 2</a></li>
-                                                <li><a href="single-product-tabstyle-3.html">Product Tab 3</a></li>
-                                            </ul>
-                                            <ul class="d-block">
-                                                <li class="title"><a href="#">Single Product Page</a></li>
-                                                <li><a href="single-product-slider.html">Product Slider</a></li>
-                                                <li><a href="single-product-gallery-left.html">Product Gallery Left</a>
-                                                <li><a href="single-product-gallery-right.html">Product Gallery Right</a> </li>
-                                                <li><a href="single-product-sticky-left.html">Product Sticky Left</a>
-                                                </li>
-                                                <li><a href="single-product-sticky-right.html">Product Sticky Right</a>
-                                                </li>
-                                                <li><a href="cart.html">Cart Page</a></li>
-                                            </ul>
-                                            <ul class="d-block p-0 border-0">
-                                                <li class="title"><a href="#">Single Product Page</a></li>
-                                                <li><a href="checkout.html">Checkout Page</a></li>
-                                                <li><a href="compare.html">Compare Page</a></li>
-                                                <li><a href="wishlist.html">Wishlist Page</a></li>
-                                                <li><a href="my-account.html">Account Page</a></li>
-                                                <li><a href="login.html">Login & Register Page</a></li>
-                                                <li><a href="empty-cart.html">Empty Cart Page</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li><a href="{% url 'all_products' %}">Все товары</a></li>
                                 <li><a href="{% url 'contact' %}">Контакты</a></li>
                                 <li><a href="{% url 'about' %}">О нас</a></li>
 
@@ -274,21 +231,23 @@
                                     </p>
                                     <ul class="link-follow">
                                         <li>
-                                            <a class="m-0" title="Twitter" target="_blank" rel="noopener noreferrer" href="#"><i class="fa fa-facebook"
-                                                aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a title="Tumblr" target="_blank" rel="noopener noreferrer" href="#"><i class="fa fa-tumblr" aria-hidden="true"></i>
+                                            <a title="GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/igor-zaitsau"><i class="fa fa-github" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a title="Facebook" target="_blank" rel="noopener noreferrer" href="#"><i class="fa fa-twitter" aria-hidden="true"></i>
+                                            <a title="Telegram" target="_blank" rel="noopener noreferrer" href="https://t.me/igor_zaitsev0"><i class="fa fa-telegram" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a title="Instagram" target="_blank" rel="noopener noreferrer" href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
+                                            <a title="VK" target="_blank" rel="noopener noreferrer" href="https://vk.com/igor.zaitsau"><i class="fa fa-vk" aria-hidden="true"></i>
                                             </a>
                                         </li>
+                                        <li>
+                                            <a title="Instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/igor_huilo/"><i class="fa fa-instagram" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+
+
                                     </ul>
                                 </div>
                             </div>
@@ -296,15 +255,14 @@
                             <!-- Start single blog -->
                             <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-60px">
                                 <div class="single-wedge">
-                                    <h4 class="footer-herading">Services</h4>
+                                    <h4 class="footer-herading">Навигация</h4>
                                     <div class="footer-links">
                                         <div class="footer-row">
                                             <ul class="align-items-center">
-                                                <li class="li"><a class="single-link" href="my-account.html">My Account</a></li>
-                                                <li class="li"><a class="single-link" href="contact.html">Contact</a></li>
-                                                <li class="li"><a class="single-link" href="cart.html">Shopping cart</a></li>
-                                                <li class="li"><a class="single-link" href="shop-left-sidebar.html">Shop</a></li>
-                                                <li class="li"><a class="single-link" href="login.html">Services Login</a></li>
+                                                <li class="li"><a class="single-link" href="{% url 'home' %}">Главная</a></li>
+                                                <li class="li"><a class="single-link" href="contact.html">Все товары</a></li>
+                                                <li class="li"><a class="single-link" href="{% url 'contact' %}">Контакты</a></li>
+                                                <li class="li"><a class="single-link" href="{% url 'about' %}">О нас</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -314,15 +272,14 @@
                             <!-- Start single blog -->
                             <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-40px">
                                 <div class="single-wedge">
-                                    <h4 class="footer-herading">My Account</h4>
+                                    <h4 class="footer-herading">Мой аккаунт</h4>
                                     <div class="footer-links">
                                         <div class="footer-row">
                                             <ul class="align-items-center">
-                                                <li class="li"><a class="single-link" href="my-account.html">My Account</a></li>
-                                                <li class="li"><a class="single-link" href="contact.html">Contact</a></li>
-                                                <li class="li"><a class="single-link" href="cart.html">Shopping cart</a></li>
-                                                <li class="li"><a class="single-link" href="shop-left-sidebar.html">Shop</a></li>
-                                                <li class="li"><a class="single-link" href="login.html">Services Login</a></li>
+                                                <li class="li"><a class="single-link" href="my-account.html">Аккаунт</a></li>
+                                                <li class="li"><a class="single-link" href="cart.html">Регистрация</a></li>
+                                                <li class="li"><a class="single-link" href="shop-left-sidebar.html">Корзина</a></li>
+                                                <li class="li"><a class="single-link" href="login.html">Избранное</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -332,7 +289,7 @@
                             <!-- Start single blog -->
                             <div class="col-md-6 col-lg-3 col-sm-12">
                                 <div class="single-wedge">
-                                    <h4 class="footer-herading">Контактная информация</h4>
+                                    <h4 class="footer-herading">Доп. информация</h4>
                                     <div class="footer-links">
                                         <!-- News letter area -->
                                         <p class="address">Адрес: Гомель, ул. Кирова 34.</p>
