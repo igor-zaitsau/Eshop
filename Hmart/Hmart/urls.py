@@ -9,7 +9,8 @@ from Main.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Main.urls'))
+    path('', include('Main.urls')),
+    path('', include('users.urls'))
 ]
 
 if settings.DEBUG:

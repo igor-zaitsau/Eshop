@@ -47,8 +47,7 @@
                                                 <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist"><i
                                                         class="pe-7s-like"></i></button>
                                                 <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="pe-7s-look"></i></button>
-                                                <button class="action compare" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal-Compare"><i
-                                                        class="pe-7s-refresh-2"></i></button>
+
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +69,7 @@
                             <div class="banner-content nth-child-3">
                                 <h3 class="title">{{ obj.title }} <br></h3>
                                 <span class="category">Цена: ${{ obj.old_price }}</span>
-                                <a href="shop-left-sidebar.html" class="shop-link">Посмотреть <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                <a href="{{ obj.get_absolute_url }}" class="shop-link">Посмотреть <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -256,9 +255,7 @@
                                         <button class="add-cart"> Add To
                                             Cart</button>
                                     </div>
-                                    <div class="pro-details-compare-wishlist pro-details-wishlist ">
-                                        <a href="wishlist.html"><i class="pe-7s-like"></i></a>
-                                    </div>
+
                                 </div>
                                 <div class="payment-img">
                                     <a href="#"><img src="{% static 'Main/images/icons/payment.png' %}" alt=""></a>
@@ -309,25 +306,8 @@
             </div>
         </div>
     </div>    
-    <!-- Modal compare -->
-    <div class="modal customize-class fade" id="exampleModal-Compare" tabindex="-1"   aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="pe-7s-close"></i></button>
-                    <div class="tt-modal-messages">
-                        <i class="pe-7s-check"></i> Added to compare successfully!
-                    </div>
-                    <div class="tt-modal-product">
-                        <div class="tt-img">
-                            <img src="{% static 'Main/images/product-image/1.webp' %}" alt="Modern Smart Phone">
-                        </div>
-                        <h2 class="tt-title"><a href="#">Modern Smart Phone</a></h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
 
 </body>
 {% endblock %}

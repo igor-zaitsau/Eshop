@@ -29,6 +29,9 @@
     <!-- Minify Version -->
     <!-- <link rel="stylesheet" href="{% static 'Main/css/plugins.min.css' %}">
     <link rel="stylesheet" href="{% static 'Main/css/style.min.css' %}"> -->
+
+
+
 </head>
 
 <div class="main-wrapper">
@@ -47,7 +50,7 @@
                                 <ul>
                                     <li><a href="tel:+375(29)144-62-98"><i class="fa fa-phone"></i> +375(29)144-62-98</a></li>
                                     <li><a href="mailto:i.zaitsev.programmer@mail.ru"><i class="fa fa-envelope-o"></i> i.zaitsev.programmer@mail.ru</a></li>
-                                    <li><a href="my-account.html"><i class="fa fa-user"></i> Account</a></li>
+                                    <li><a href="{% url 'login' %}"><i class="fa fa-user"></i> Вход</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -174,7 +177,7 @@
                 </div>
                 <div class="foot">
                     <div class="buttons">
-                        <a href="wishlist.html" class="btn btn-dark btn-hover-primary mt-30px">Посмотреть избранное</a>
+                        <a href="{% url 'wishlist' %}" class="btn btn-dark btn-hover-primary mt-30px">Посмотреть избранное</a>
                     </div>
                 </div>
             </div>
@@ -201,7 +204,7 @@
                 </div>
                 <div class="foot">
                     <div class="buttons mt-30px">
-                        <a href="cart.html" class="btn btn-dark btn-hover-primary mb-30px">Посмотреть корзину</a>
+                        <a href="{% url 'cart' %}" class="btn btn-dark btn-hover-primary mb-30px">Посмотреть корзину</a>
                         <a href="checkout.html" class="btn btn-outline-dark current-btn">Оплатить</a>
                     </div>
                 </div>
@@ -277,7 +280,7 @@
                                         <div class="footer-row">
                                             <ul class="align-items-center">
                                                 <li class="li"><a class="single-link" href="my-account.html">Аккаунт</a></li>
-                                                <li class="li"><a class="single-link" href="cart.html">Регистрация</a></li>
+                                                <li class="li"><a class="single-link" href="{% url 'login' %}">Вход/Регистрация</a></li>
                                                 <li class="li"><a class="single-link" href="shop-left-sidebar.html">Корзина</a></li>
                                                 <li class="li"><a class="single-link" href="login.html">Избранное</a></li>
                                             </ul>
