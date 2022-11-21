@@ -50,7 +50,13 @@
                                 <ul>
                                     <li><a href="tel:+375(29)144-62-98"><i class="fa fa-phone"></i> +375(29)144-62-98</a></li>
                                     <li><a href="mailto:i.zaitsev.programmer@mail.ru"><i class="fa fa-envelope-o"></i> i.zaitsev.programmer@mail.ru</a></li>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'logout' %}"><i class="fa fa-user"></i> Выход</a></li>
+                                    {% else %}
                                     <li><a href="{% url 'login' %}"><i class="fa fa-user"></i> Вход</a></li>
+                                    {% endif %}
+
+
                                 </ul>
                             </div>
                         </div>

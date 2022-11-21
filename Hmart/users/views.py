@@ -4,14 +4,10 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
 
-def login(request):
-    return render(request, 'users/login.html')
-
-def registration(request):
-    return render(request, 'users/registration.html')
-
-def logout(request):
-    pass
+class SignUp(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = "registration/signup.html"
 
 def cart(request):
     return render(request, 'users/cart.html')

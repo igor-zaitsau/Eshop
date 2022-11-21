@@ -9,8 +9,9 @@ from Main.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', include('Main.urls')),
-    path('', include('users.urls'))
+    path('', include('users.urls')),
 ]
 
 if settings.DEBUG:
