@@ -62,18 +62,23 @@
         <div class="banner-area style-three pb-100px">
             <div class="container">
                 <div class="row">
-                    {% for obj in two_product %}
                     <div class="col-md-6">
                         <div class="single-banner mb-lm-30px">
-                            <img src="{{ obj.photo.url }}" alt="Product" width="572" height="542" />
+                            <img src="{% static  'Main/images/first.jpg' %}" alt="Product" width="572" height="542" />
                             <div class="banner-content nth-child-3">
-                                <h3 class="title">{{ obj.title }} <br></h3>
-                                <span class="category">Цена: ${{ obj.old_price }}</span>
-                                <a href="{{ obj.get_absolute_url }}" class="shop-link">Посмотреть <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                <a href="{% url 'login' %}" class="shop-link">Вход <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                    <div class="col-md-6">
+                        <div class="single-banner mb-lm-30px">
+                            <img src="{% static  'Main/images/second.jpg' %}" alt="Product" width="572" height="542" />
+                            <div class="banner-content nth-child-3">
+                                <a href="{% url 'signup' %}" class="shop-link">Регистрация <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
